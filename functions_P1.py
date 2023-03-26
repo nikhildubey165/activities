@@ -18,4 +18,4 @@ def discounted_price(amount, prime_member):
         amount *= (1 - prime_discount)
     amount *= (1 - black_friday_discount)
     return amount
-discounted_price(4500,True)
+print(discounted_price(4500,True))
