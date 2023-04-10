@@ -15,18 +15,20 @@ Write a program that reads the frequency of some radiation from the user and
 displays name of the radiation as part of an appropriate message.
 '''
 
-f = float(input("Enter Frequency: "))
-if (f<(3*(10**9))):
-    print("Radio Waves")
-elif ((3*(10**9)<=f<(3*(10**12)))):
-    print("Microwaves")
-elif ((3*(10**12))<=f<(4.3*(10**14))):
-    print("Infrared Light")
-elif ((4.3*(10**14))<=f<(7.5*(10**14))):
-    print("Visible Light")
-elif ((7.5*(10**14))<=f<(3*(10**7))):
-    print("Ultraviolet Light")
-elif ((3*(10**7))<=f<(3*(10**19))):
-    print("X-Rays")
-else:
-    print("Gamma Rays")
+frequency = float(input("Enter frequency in Hertz (Hz): "))
+
+if frequency < 3e9:
+    category = "Radio Waves"
+elif 3e9 <= frequency < 3e12:
+    category = "Microwaves"
+elif 3e12 <= frequency < 4.3e14:
+    category = "Infrared Light"
+elif 4.3e14 <= frequency < 7.5e14:
+    category = "Visible Light"
+elif 7.5e14 <= frequency < 3e17:
+    category = "Ultraviolet Light"
+elif 3e17 <= frequency < 3e19:
+    category = "X-Rays"
+else: # frequency is 3e19 or greater
+    category = "Gamma Rays"
+print(f"A frequency of {frequency} Hz corresponds to {category}.")
